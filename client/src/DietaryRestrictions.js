@@ -14,7 +14,7 @@ const DietaryRestrictions = () => {
   useEffect(() => {
     // Fetch health labels from the server
     Axios.get(
-      "https://whattocook2-4e261a72626f.herokuapp.com/users/healthlabels"
+      "https://whattocookbeta-790dbac11aa6.herokuapp.com/users/healthlabels"
     )
       .then((response) => {
         const filteredLabels = response.data.labels.filter(
@@ -44,7 +44,7 @@ const DietaryRestrictions = () => {
 
       // Fetch the healthLabel_ids corresponding to the selected health labels
       const response = await Axios.get(
-        "https://whattocook2-4e261a72626f.herokuapp.com/users/healthlabels_ids",
+        "https://whattocookbeta-790dbac11aa6.herokuapp.com/users/healthlabels_ids",
         {
           params: { selectedRestrictions: selectedRestrictions.join(",") },
           withCredentials: true,
@@ -59,7 +59,7 @@ const DietaryRestrictions = () => {
       console.log(healthLabelIds);
 
       await Axios.post(
-        "https://whattocook2-4e261a72626f.herokuapp.com/users/dietary_restrictions",
+        "https://whattocookbeta-790dbac11aa6.herokuapp.com/users/dietary_restrictions",
         { selectedRestrictions: healthLabelIds },
         {
           withCredentials: true,
@@ -79,7 +79,7 @@ const DietaryRestrictions = () => {
   useEffect(() => {
     // Fetch user's saved dietary restrictions
     Axios.get(
-      "https://whattocook2-4e261a72626f.herokuapp.com/users/user_healthlabels",
+      "https://whattocookbeta-790dbac11aa6.herokuapp.com/users/user_healthlabels",
       {
         withCredentials: true,
         headers: {

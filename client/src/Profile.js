@@ -34,7 +34,7 @@ const Profile = ({ onRecipeSelect }) => {
   const [error, setError] = useState(null);
   const [quantityError, setQuantityError] = useState("");
 
-  const API = "https://whattocook2-4e261a72626f.herokuapp.com";
+  const API = "https://whattocookbeta-790dbac11aa6.herokuapp.com";
 
   const handleRecipeToSearchBar = (recipeTitle) => {
     if (onRecipeSelect) {
@@ -107,7 +107,7 @@ const Profile = ({ onRecipeSelect }) => {
   const fetchIngredientOptions = async () => {
     try {
       const response = await Axios.get(
-        `https://whattocook2-4e261a72626f.herokuapp.com/users/ingredient_options?query=${ingredientName}`,
+        `https://whattocookbeta-790dbac11aa6.herokuapp.com/users/ingredient_options?query=${ingredientName}`,
         {
           withCredentials: true,
           headers: {
@@ -299,7 +299,7 @@ const Profile = ({ onRecipeSelect }) => {
               {profilePictureURL ? (
                 <img
                   className="profile-pic"
-                  src={`https://whattocook2-4e261a72626f.herokuapp.com/uploads/${profilePictureURL}`}
+                  src={`https://whattocookbeta-790dbac11aa6.herokuapp.com/uploads/${profilePictureURL}`}
                   alt="Profile"
                 />
               ) : (
@@ -367,7 +367,7 @@ const Profile = ({ onRecipeSelect }) => {
                 {/* Display the picture */}
                 <img
                   className="recipe-img"
-                  src={`https://whattocook2-4e261a72626f.herokuapp.com/recipe_images/${recipeOfTheWeek.image}`}
+                  src={`https://whattocookbeta-790dbac11aa6.herokuapp.com/recipe_images/${recipeOfTheWeek.image}`}
                   alt="Recipe"
                 />
                 {/* <p>{recipeOfTheWeek.title}</p> */}
@@ -384,7 +384,7 @@ const Profile = ({ onRecipeSelect }) => {
                   {recipe.image ? (
                     <img
                       className="fav_recipe_image"
-                      src={`https://whattocook2-4e261a72626f.herokuapp.com/recipe_images/${recipe.image}`}
+                      src={`https://whattocookbeta-790dbac11aa6.herokuapp.com/recipe_images/${recipe.image}`}
                       alt={recipe.title}
                       onClick={() => handleRecipeToSearchBar(recipe.title)}
                     />

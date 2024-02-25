@@ -13,18 +13,21 @@ function Contact() {
 
   const submitForm = async () => {
     try {
-      await fetch("https://whattocook2-4e261a72626f.herokuapp.com/contactus", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          name,
-          email,
-          subject,
-          text,
-        }),
-      });
+      await fetch(
+        "https://whattocookbeta-790dbac11aa6.herokuapp.com/contactus",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            name,
+            email,
+            subject,
+            text,
+          }),
+        }
+      );
 
       alert("Sent successfully!");
     } catch (error) {
